@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Sabby 🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Page 1: Envelope -->
+  <section id="intro" class="section">
+    <div class="envelope">
+      <h1>Happy Birthday, Sabby! 💌</h1>
+      <p>Click the button below to open</p>
+      <button onclick="goToSection('note')">Open</button>
+    </div>
+  </section>
+
+  <!-- Page 2: Note -->
+  <section id="note" class="section hidden">
+    <div class="note-box">
+      <h2>Just want to tell you...</h2>
+      <p>Happy birthday and wish more birthdays to come. I know this birthday is kinda sad because of the recent event, but always remember...</p>
+      <button onclick="goToSection('tough')">Next</button>
+    </div>
+  </section>
+
+  <!-- Page 3: Be Tough -->
+  <section id="tough" class="section hidden">
+    <div class="note-box">
+      <h2>Be Tough</h2>
+      <p>Despite sa mga nahitabo karon, always be tough lang because everything naay reason and I know kini na challenge malapasan rajud ni nimo.</p>
+      <button onclick="goToSection('courage')">Next</button>
+      <button class="back-btn" onclick="goToSection('note')">Back</button>
+    </div>
+  </section>
+
+  <!-- Page 4: Courage -->
+  <section id="courage" class="section hidden">
+    <div class="note-box">
+      <h2>COURAGE</h2>
+      <p>Have courage to face everything. Remember you are not alone — we're here on your side, dili lang ako but also your friends and family.</p>
+      <button onclick="goToSection('dontgiveup')">Next</button>
+      <button class="back-btn" onclick="goToSection('tough')">Back</button>
+    </div>
+  </section>
+
+  <!-- Page 5: Don't Give Up -->
+  <section id="dontgiveup" class="section hidden">
+    <div class="note-box">
+      <h2>Don't Give Up</h2>
+      <p>DON'T GIVE UP! YOU CAN DO IT!</p>
+      <button onclick="goToSection('wishes')">Next</button>
+      <button class="back-btn" onclick="goToSection('courage')">Back</button>
+    </div>
+  </section>
+
+  <!-- Page 6: Birthday Wishes -->
+  <section id="wishes" class="section hidden">
+    <div class="note-box">
+      <h2>My 3 Birthday Wishes for You 🎁</h2>
+      <div class="present-section">
+        <div class="present" onclick="revealWish(1)">🎁</div>
+        <div class="present" onclick="revealWish(2)">🎁</div>
+        <div class="present" onclick="revealWish(3)">🎁</div>
+      </div>
+      <div class="wish" id="wish1"></div>
+      <div class="wish" id="wish2"></div>
+      <div class="wish" id="wish3"></div>
+      <button onclick="goToSection('final')">Next</button>
+      <button class="back-btn" onclick="goToSection('dontgiveup')">Back</button>
+    </div>
+  </section>
+
+  <!-- Final Page -->
+  <section id="final" class="section hidden">
+    <div class="floating-message">
+      Happy Birthday, Sabby 💖 <br />
+      From Zion
+    </div>
+    <img src="Cat.jpg" alt="Cat" style="width: 200px; height: auto; margin-top: 20px;" />
+    <button class="back-btn" onclick="goToSection('wishes')">Back</button>
+  </section>
+  
+  <!-- The Restart Button Section -->
+  <div class="restart-section hidden">
+    <button onclick="restartJourney()">Restart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

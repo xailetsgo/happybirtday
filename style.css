@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, rgba(255, 191, 204, 0.8), rgba(204, 255, 255, 0.8)), 
+                linear-gradient(225deg, rgba(255, 182, 193, 0.7), rgba(173, 216, 230, 0.6)), 
+                radial-gradient(circle, rgba(255, 240, 240, 0.5) 30%, rgba(240, 240, 255, 0.6) 70%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+    background-position: center center, center center, center center;
+    background-repeat: no-repeat;
+    animation: flowerBackground 15s ease infinite;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  @keyframes flowerBackground {
+    0% {
+      background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+    50% {
+      background-position: 100% 100%, 0% 0%, 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .envelope,
+  .note-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h1, h2 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  button {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  }
+  
+  .present-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .present {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .present:hover {
+    transform: scale(1.2);
+  }
+  
+  .wish {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #5d5d5d;
+  }
+  
+  .wish.visible {
+    opacity: 1;
+  }
+  
+  .floating-message {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #444;
+    animation: float 2s infinite ease-in-out;
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .restart-section {
+    margin-top: 2rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Flower-themed pattern using pseudo-elements */
+  body::before, body::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, rgba(255, 240, 240, 0.5) 70%) 0 0,
+                radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, rgba(240, 240, 255, 0.5) 70%) 50% 50%;
+    background-size: 30% 30%;
+    animation: flowerPattern 10s linear infinite;
+  }
+  
+  @keyframes flowerPattern {
+    0% { background-position: 0% 0%, 50% 50%; }
+    50% { background-position: 100% 100%, 0% 0%; }
+    100% { background-position: 0% 0%, 50% 50%; }
+  }
+  
